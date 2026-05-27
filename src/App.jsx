@@ -1,5 +1,6 @@
-import Nav from "./components/Nav";
+import Nav from "./components/nav/Nav";
 import Overview from "./components/Overview";
+import Speaker from "./components/Speaker";
 import Top from "./components/Top";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <Nav />
     <Top />
     <Overview />
+    <Speaker />
     </>
   );
 }
