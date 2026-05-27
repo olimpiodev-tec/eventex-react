@@ -16,7 +16,7 @@ function Sponsors() {
         gold1, gold2, gold3
     ]
 
-    const sponsorSilver = [
+    const sponsorsSilver = [
         silver1, silver2, silver3, silver4, silver5, silver6
     ]
 
@@ -28,7 +28,7 @@ function Sponsors() {
 
                 <Sponsor sponsorsList={sponsorsGold} sponsorCategory={'Gold'} />
 
-                <Sponsor sponsorsLIst={sponsorSilver} sponsorCategory={'Silver'} />
+                <Sponsor sponsorsList={sponsorsSilver} sponsorCategory={'Silver'} />
 
                 <h3>Seja um patrocinador</h3>
                 <p>Interessado? Descubra as oportunidades e benefícios.</p>
