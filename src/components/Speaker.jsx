@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import loiane from 'url:../assets/images/loiane.png'
 import diego from 'url:../assets/images/diego.png'
 import henrique from 'url:../assets/images/henrique.png'
@@ -6,16 +8,16 @@ import rodrigo from 'url:../assets/images/rodrigo.png'
 function Speaker() {
     const speakers = [
         {
-            name: "Loiane Groner", photo: loiane, link: "palestrante_detalhes_lg.html"
+            name: "Loiane Groner", photo: loiane
         },
         {
-            name: "Rodrigo Branas", photo: rodrigo, link: "palestrante_detalhes_rb.html"
+            name: "Rodrigo Branas", photo: rodrigo
         },
         {
-            name: "Henrique Bastos", photo: henrique, link: "palestrante_detalhes_hb.html"
+            name: "Henrique Bastos", photo: henrique
         },
         {
-            name: "Diego Fernandes", photo: diego, link: "palestrante_detalhes_df.html"
+            name: "Diego Fernandes", photo: diego
         }
     ]
     return (
@@ -28,9 +30,7 @@ function Speaker() {
                         <div className="desktop-3" key={key}>
                             <img src={speaker.photo} />
                             <h4>
-                                <a href={speaker.link}>
-                                    {speaker.name}
-                                </a>
+                                <Link to={`speakerDetail/${key}`}>{speaker.name}</Link>                                
                             </h4>
                         </div>
                     );

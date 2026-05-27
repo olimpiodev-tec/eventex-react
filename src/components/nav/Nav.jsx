@@ -6,7 +6,9 @@ function Nav() {
             <header className="header header-inline min-h-3 row desktop-12 container" role="banner">
 
                 <div className="site-logo">
-                    <h1><a href="/" rel="home">Eventex</a></h1>
+                    <h1>
+                        <a href="/" rel="home">Eventex</a>
+                    </h1>
                     <p className="site-description screen-reader-only">O maior encontro hacker do mundo!</p>
                 </div>
 

@@ -4,7 +4,7 @@ function MenuItem() {
             interno: true, href: "#overview", title: "Conferência"
         },
         {
-            interno: false, href: "palestras.html", title: "Palestras"
+            interno: false, href: "#speakers", title: "Palestras"
         },
         {
             interno: true, href: "#sponsors", title: "Patrocinadores"

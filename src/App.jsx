@@ -1,24 +1,20 @@
-import Local from "./components/Local";
-import Nav from "./components/nav/Nav";
-import Overview from "./components/Overview";
-import Register from "./components/Register";
-import Speaker from "./components/Speaker";
-import Sponsors from "./components/sponsors/Sponsors";
-import Top from "./components/Top";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from 'react-router-dom'
+import Home from "./pages/Home";
+import SpeakerDetail from "./pages/SpeakerDetail"
 
 function App() {
-
-  return (
-    <>
-      <Nav />
-      <Top />
-      <Overview />
-      <Speaker />
-      <Sponsors />
-      <Register />
-      <Local />
-    </>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/speakerDetail/:id" element={<SpeakerDetail />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
