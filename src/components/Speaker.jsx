@@ -24,7 +24,6 @@ function Speaker() {
                 <h2>Palestrantes Convidados</h2>
 
                 {speakers.map((speaker, key) => {
-                    console.log(speaker)
                     return (
                         <div className="desktop-3" key={key}>
                             <img src={speaker.photo} />

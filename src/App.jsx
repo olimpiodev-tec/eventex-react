@@ -8,11 +8,11 @@ function App() {
 
   return (
     <>
-    <Nav />
-    <Top />
-    <Overview />
-    <Speaker />
-    <Sponsors />
+      <Nav />
+      <Top />
+      <Overview />
+      <Speaker />
+      <Sponsors />
     </>
   );
 }
