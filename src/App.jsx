@@ -1,7 +1,10 @@
 function App() {
 
   return (
-    <h1>Hello World, React</h1>
+    <div>
+      <h1>Hello World, React</h1>
+      <h2>Projeto Eventex</h2>
+    </div>
   );
 }
 
