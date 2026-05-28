@@ -1,10 +1,25 @@
 import { Link } from 'react-router-dom'
-
-import { getSpeakers } from '../model/speaker';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import getBaseUrlApi from '../environment';
 
 function Speaker() {
 
-    const speakers = getSpeakers()
+    const [speakers, setSpeakers] = useState([])
+
+    useEffect(() => {
+        const getSpeakers = async () => {
+            try {
+                const BASE_URL = getBaseUrlApi();
+                const response = await axios.get(`${BASE_URL}/speakers`);
+                setSpeakers(response.data)
+            } catch(error) {
+                alert(`Erro ao buscar palestrantes: ${error}`)
+            }
+        };
+
+        getSpeakers();
+    }, [])
     
     return (
         <section id="speakers">
@@ -14,9 +29,9 @@ function Speaker() {
                 {speakers.map((speaker, key) => {
                     return (
                         <div className="desktop-3" key={key}>
-                            <img src={speaker.image} />
+                            <img src={speaker.imageUrl} />
                             <h4>
-                                <Link to={`speakerDetail/${key}`}>{speaker.name}</Link>                                
+                                <Link to={`speakerDetail/${speaker.id}`}>{speaker.name}</Link>                                
                             </h4>
                         </div>
                     );
