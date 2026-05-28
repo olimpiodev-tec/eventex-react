@@ -2,10 +2,10 @@ function Sponsor(props) {
 
     return (
         <>
-            <h3>{props.sponsorCategory}</h3>
+            <h3>{props.category}</h3>
             <div className="sponsor-slider min-h-6">
-                {props.sponsorsList.map((sponsor, key) => 
-                    <img key={key} className="img-responsive" src={sponsor} alt="logo" />
+                {props.images.map((image, key) => 
+                    <img key={key} className="img-responsive" src={image} alt="logo" />
                 )}
 
             </div>

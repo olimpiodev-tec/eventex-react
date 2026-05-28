@@ -1,24 +1,26 @@
-import Sponsor from "./Sponsor";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import getBaseUrlApi from '../../environment';
 
-import gold1 from 'url:../../assets/images/sponsorgold01.png'
-import gold2 from 'url:../../assets/images/sponsorgold02.png'
-import gold3 from 'url:../../assets/images/sponsorgold03.png'
-import silver1 from 'url:../../assets/images/sponsorsilver01.png'
-import silver2 from 'url:../../assets/images/sponsorsilver02.png'
-import silver3 from 'url:../../assets/images/sponsorsilver03.png'
-import silver4 from 'url:../../assets/images/sponsorsilver04.png'
-import silver5 from 'url:../../assets/images/sponsorsilver05.png'
-import silver6 from 'url:../../assets/images/sponsorsilver06.png'
+import Sponsor from "./Sponsor";
 
 function Sponsors() {
 
-    const sponsorsGold = [
-        gold1, gold2, gold3
-    ]
+    const [sponsors, setSponsors] = useState([])
 
-    const sponsorsSilver = [
-        silver1, silver2, silver3, silver4, silver5, silver6
-    ]
+    useEffect(() => {
+        const getSponsors = async () => {
+            try {
+                const BASE_URL = getBaseUrlApi();
+                const response = await axios.get(`${BASE_URL}/sponsors`);
+                setSponsors(response.data)
+            } catch(error) {
+                alert(`Erro ao buscar os patrocinadores: ${error}`)
+            }
+        };
+
+        getSponsors();
+    }, [])
 
     return (
         <section id="sponsors">
@@ -26,9 +28,9 @@ function Sponsors() {
 
                 <h2>Patrocinadores</h2>
 
-                <Sponsor sponsorsList={sponsorsGold} sponsorCategory={'Gold'} />
-
-                <Sponsor sponsorsList={sponsorsSilver} sponsorCategory={'Silver'} />
+                {sponsors.map(sponsor => 
+                    <Sponsor key={sponsor.id} images={sponsor.images} category={sponsor.category} />
+                )}
 
                 <h3>Seja um patrocinador</h3>
                 <p>Interessado? Descubra as oportunidades e benefícios.</p>
