@@ -1,25 +1,11 @@
 import { Link } from 'react-router-dom'
 
-import loiane from 'url:../assets/images/loiane.png'
-import diego from 'url:../assets/images/diego.png'
-import henrique from 'url:../assets/images/henrique.png'
-import rodrigo from 'url:../assets/images/rodrigo.png'
+import { getSpeakers } from '../model/speaker';
 
 function Speaker() {
-    const speakers = [
-        {
-            name: "Loiane Groner", photo: loiane
-        },
-        {
-            name: "Rodrigo Branas", photo: rodrigo
-        },
-        {
-            name: "Henrique Bastos", photo: henrique
-        },
-        {
-            name: "Diego Fernandes", photo: diego
-        }
-    ]
+
+    const speakers = getSpeakers()
+    
     return (
         <section id="speakers">
             <div className="speakers text-align-center row desktop-12 padding-bottom-2 container">
@@ -28,7 +14,7 @@ function Speaker() {
                 {speakers.map((speaker, key) => {
                     return (
                         <div className="desktop-3" key={key}>
-                            <img src={speaker.photo} />
+                            <img src={speaker.image} />
                             <h4>
                                 <Link to={`speakerDetail/${key}`}>{speaker.name}</Link>                                
                             </h4>
