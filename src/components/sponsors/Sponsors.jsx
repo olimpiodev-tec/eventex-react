@@ -28,8 +28,8 @@ function Sponsors() {
 
                 <h2>Patrocinadores</h2>
 
-                {sponsors.map(sponsor => 
-                    <Sponsor key={sponsor.id} images={sponsor.images} category={sponsor.category} />
+                {sponsors.map((sponsor, idx) => 
+                    <Sponsor key={idx} images={sponsor.images} category={sponsor.category} />
                 )}
 
                 <h3>Seja um patrocinador</h3>
